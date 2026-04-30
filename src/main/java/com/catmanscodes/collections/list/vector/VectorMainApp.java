@@ -5,8 +5,12 @@ import java.util.Vector;
 public class VectorMainApp {
     public static void main(String[] args) {
 
-        //introduce on 1.0 version, it's thread safe , and good for multi threading applications.
-        // it implemented RandomAccess so get element is fast here
+        //1. it is introduced on legacy 1.0 version
+        //2. it's sync & thread safe & good for multi threading applications.
+        //3. it implemented RandomAccess so get element is fast here
+        //4. it is dynamic array that grow automatically
+        //5. double capacity when it up to max size
+
 
         Vector<Integer> numVector = new Vector<>();
 
@@ -16,15 +20,17 @@ public class VectorMainApp {
         numVector.add(11);
         numVector.add(0);
         numVector.add(7);
-        System.out.println(numVector);
+        System.out.println("Initial vector list: "+numVector);
 
-        numVector.capacity();
+        System.out.println("capacity:"+numVector.capacity());
+
         numVector.remove(1);
 
-        System.out.println(numVector.contains(11));
+        System.out.println("it contains no 11: "+numVector.contains(11));
 
         numVector.clear();
-        System.out.println(numVector);
+
+        System.out.println("after clear it:"+numVector);
 
     }
 }

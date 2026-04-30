@@ -1,0 +1,1 @@
+List -> ArrayList, LinkedList, Vector -> Stack
