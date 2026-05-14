@@ -1,6 +1,6 @@
 package com.catmanscodes.oops;
 
-import java.util.Objects;
+import java.util.Optional;
 
 public class Employee {
 
@@ -11,6 +11,8 @@ public class Employee {
     }
 
     public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {
@@ -30,14 +32,15 @@ public class Employee {
     }
 
     @Override
-    public boolean equals(Object obj) {
-
-        Employee e = (Employee) obj;
-        return this.id == e.id && this.name.equals(e.name);
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
+
+    public Optional<String> getAddress() {
+        return Optional.empty();
     }
 }
